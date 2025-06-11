@@ -1,22 +1,13 @@
 @import "tailwindcss";
 
-*{
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-@theme inline{
-  --color-button: var(--button);
-}
-
-:root{
-  --button:#3552b6
+@theme{
+  --color-button: #3551b7;
+  --color-primary: #111628;
+  --color-secondary: #080E1D;
 }
 
 body{
-  background-color: #080f1b;
+  background-color: #090E1C;
 }
 
 button{
@@ -24,13 +15,12 @@ button{
 }
 
 a{
-  
   text-decoration: none;
 }
 
-body, input, textarea, select, button{
-  font: 400, 1rem sans-serif;
-}
+/* body, input, textarea, select, button{
+  font: 400 1rem sans-serif;
+} */
 
 @media(max-width:720px){
   html{
