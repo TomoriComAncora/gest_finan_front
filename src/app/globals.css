@@ -2,12 +2,8 @@
 
 @theme{
   --color-button: #3551b7;
-  --color-primary: #111628;
-  --color-secondary: #080E1D;
-}
-
-body{
-  background-color: #090E1C;
+  --color-primary: #080E1C;
+  --color-secondary: #101728;
 }
 
 button{
@@ -17,10 +13,6 @@ button{
 a{
   text-decoration: none;
 }
-
-/* body, input, textarea, select, button{
-  font: 400 1rem sans-serif;
-} */
 
 @media(max-width:720px){
   html{
