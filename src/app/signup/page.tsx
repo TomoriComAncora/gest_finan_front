@@ -2,6 +2,7 @@ import logoImg from "/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { api } from "@/server/api";
+import { redirect } from "next/navigation";
 
 export default function SignUp() {
   async function handleRegister(formData: FormData) {
@@ -25,6 +26,8 @@ export default function SignUp() {
       console.log("Erro");
       console.log(err);
     }
+
+    redirect("/");
   }
 
   return (
