@@ -42,7 +42,7 @@ export default function SignUp() {
           <span className="text-white">
             Já possui cadastro?
             <Link
-              href={"/signup"}
+              href={"/"}
               className="text-button mx-1"
             >
               Acesse agora
