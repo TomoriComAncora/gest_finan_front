@@ -1,27 +1,27 @@
 import logoImg from "/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import {api} from "@/server/api"
+import { api } from "@/server/api";
 
 export default function SignUp() {
-  async function handleRegister(formData: FormData){
-    "use server"
+  async function handleRegister(formData: FormData) {
+    "use server";
     const name = formData.get("name");
     const email = formData.get("email");
     const password = formData.get("password");
 
-    if(name === "" || email === "" || password ===""){
+    if (name === "" || email === "" || password === "") {
       console.log("PREENCHA TODOS OS CAMPOS");
       return;
     }
 
-    try{
-      await api.post("/users",{
+    try {
+      await api.post("/users", {
         name,
         email,
-        password
-      })
-    }catch(err){
+        password,
+      });
+    } catch (err) {
       console.log("Erro");
       console.log(err);
     }
@@ -31,9 +31,12 @@ export default function SignUp() {
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-primary">
         <section className="mt-6 py-4 px-3 flex flex-col items-center justify-center gap-3.5 bg-secondary w-[90%] sm:w-[600px]">
-          <Image src={logoImg} alt="Logo Gesfin" width={200}/>
-            <h1 className="text-white font-medium text-lg">Criando sua conta</h1>
-          <form className="text-white pb-4 text-lg flex flex-col w-[90%] gap-4" action={handleRegister}>
+          <Image src={logoImg} alt="Logo Gesfin" width={200} />
+          <h1 className="text-white font-medium text-lg">Criando sua conta</h1>
+          <form
+            className="text-white pb-4 text-lg flex flex-col w-[90%] gap-4"
+            action={handleRegister}
+          >
             <input
               className="h-10 border-2 border-gray-500 p-4 rounded-lg bg-primary text-white text-lg placeholder-gray-200"
               type="text"
@@ -65,10 +68,7 @@ export default function SignUp() {
           </form>
           <span className="text-white">
             Já possui cadastro?
-            <Link
-              href={"/"}
-              className="text-button mx-1"
-            >
+            <Link href={"/"} className="text-button mx-1">
               Acesse agora
             </Link>
           </span>
