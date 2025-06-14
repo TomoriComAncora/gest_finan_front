@@ -30,7 +30,7 @@ export default function Home() {
       }
       console.log(response.data);
 
-      const expressTime = 24 * 60 * 60 * 1000;
+      const expressTime =  60 * 60 * 24 * 30 * 1000;
       const cookiesStore = await cookies();
 
       cookiesStore.set("session", response.data.token, {
@@ -40,9 +40,9 @@ export default function Home() {
         secure: process.env.NODE_ENV === 'production'
       })
 
-    }catch(err){
+    }catch(error){
       console.log("Error");
-      console.log(err);
+      console.log(error);
     }
     
     redirect("/dashboard");
