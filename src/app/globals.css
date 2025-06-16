@@ -6,6 +6,10 @@
   --color-secondary: #101728;
 }
 
+body{
+  background-color: #080E1C;
+}
+
 button{
   cursor: pointer;
 }
