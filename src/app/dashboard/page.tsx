@@ -1,7 +1,9 @@
+import { Transactions } from "./components/transactions";
+
 export default function Dashboard(){
     return(
         <>
-            <h1>Dashboard</h1>
+            <Transactions/>
         </>
     )
 }
