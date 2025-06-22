@@ -22,6 +22,7 @@ export default function MyTransaction() {
           <thead className="bg-secondary text-white uppercase">
             <tr>
               <th className="px-4 py-2">Data</th>
+              <th className="px-4 py-2">Nome</th>
               <th className="px-4 py-2">Descrição</th>
               <th className="px-4 py-2">Valor</th>
               <th className="px-4 py-2">Tipo</th>
@@ -32,6 +33,7 @@ export default function MyTransaction() {
             <tr className="bg-primary">
               <td className="px-4 py-2">18/06/2025</td>
               <td className="px-4 py-2">Salário</td>
+              <td className="px-4 py-2">Salário de junho</td>
               <td className="px-4 py-2">R$ 2800</td>
               <td className="px-4 py-2">Entrada</td>
               <td className="px-4 py-2 space-x-2">
@@ -46,6 +48,7 @@ export default function MyTransaction() {
             <tr className="bg-secondary">
               <td className="px-4 py-2">18/06/2025</td>
               <td className="px-4 py-2">Salário</td>
+              <td className="px-4 py-2"></td>
               <td className="px-4 py-2">R$ 2800</td>
               <td className="px-4 py-2">Entrada</td>
               <td className="px-4 py-2 space-x-2">
@@ -60,6 +63,7 @@ export default function MyTransaction() {
             <tr className="bg-primary">
               <td className="px-4 py-2">18/06/2025</td>
               <td className="px-4 py-2">Salário</td>
+              <td className="px-4 py-2"></td>
               <td className="px-4 py-2">R$ 2800</td>
               <td className="px-4 py-2">Entrada</td>
               <td className="px-4 py-2 space-x-2">
@@ -74,6 +78,7 @@ export default function MyTransaction() {
             <tr className="bg-secondary">
               <td className="px-4 py-2">18/06/2025</td>
               <td className="px-4 py-2">Salário</td>
+              <td className="px-4 py-2">Troca ssd</td>
               <td className="px-4 py-2">R$ 2800</td>
               <td className="px-4 py-2">Entrada</td>
               <td className="px-4 py-2 space-x-2">
