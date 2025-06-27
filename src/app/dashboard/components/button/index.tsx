@@ -7,7 +7,7 @@ interface Props {
 
 export function Button({ name }: Props) {
   return (
-    <button type="submit" className="h-10 text-lg bg-button rounded-lg font-semibold text-white flex items-center justify-center transition-all duration-500 hover:scale-105">
+    <button className="h-10 w-[90%] text-lg bg-button rounded-lg font-semibold text-white flex items-center justify-center transition-all duration-500 hover:scale-105">
       {name}
     </button>
   );
