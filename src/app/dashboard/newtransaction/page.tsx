@@ -1,4 +1,4 @@
-import { Form } from "@/app/dashboard/newtransaction/components"
+import { Form } from "@/app/dashboard/newtransaction/components/form"
 
 export default function NewTransaction() {
   return (
