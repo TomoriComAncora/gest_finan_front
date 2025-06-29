@@ -39,74 +39,36 @@ export default function ListTransactions({ transactions }: Props) {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-primary">
-              <td className="px-4 py-2">18/06/2025</td>
-              <td className="px-4 py-2">Salário</td>
-              <td className="px-4 py-2">Salário de junho</td>
-              <td className="px-4 py-2">R$ 2800</td>
-              <td className="px-4 py-2">Entrada</td>
-              <td className="px-4 py-2 space-x-2">
-                <div className="flex gap-4">
-                  <Link
-                    href={"/dashboard/editTransaction"}
-                    className="text-white transition-all duration-500 hover:scale-105 hover:text-blue-500"
-                  >
-                    <Pencil />
-                  </Link>
-                  <Link
-                    href={"/editTransaction"}
-                    className="text-white transition-all duration-500 hover:scale-105 hover:text-red-500"
-                  >
-                    <Trash2 />
-                  </Link>
-                </div>
-              </td>
-            </tr>
-            <tr className="bg-secondary">
-              <td className="px-4 py-2">18/06/2025</td>
-              <td className="px-4 py-2">Salário</td>
-              <td className="px-4 py-2"></td>
-              <td className="px-4 py-2">R$ 2800</td>
-              <td className="px-4 py-2">Entrada</td>
-              <td className="px-4 py-2 space-x-2">
-                <button className="text-blue-500 hover:underline">
-                  Editar
-                </button>
-                <button className="text-red-500 hover:underline">
-                  Excluir
-                </button>
-              </td>
-            </tr>
-            <tr className="bg-primary">
-              <td className="px-4 py-2">18/06/2025</td>
-              <td className="px-4 py-2">Salário</td>
-              <td className="px-4 py-2"></td>
-              <td className="px-4 py-2">R$ 2800</td>
-              <td className="px-4 py-2">Entrada</td>
-              <td className="px-4 py-2 space-x-2">
-                <button className="text-blue-500 hover:underline">
-                  Editar
-                </button>
-                <button className="text-red-500 hover:underline">
-                  Excluir
-                </button>
-              </td>
-            </tr>
-            <tr className="bg-secondary">
-              <td className="px-4 py-2">18/06/2025</td>
-              <td className="px-4 py-2">Salário</td>
-              <td className="px-4 py-2">Troca ssd</td>
-              <td className="px-4 py-2">R$ 2800</td>
-              <td className="px-4 py-2">Entrada</td>
-              <td className="px-4 py-2 space-x-2">
-                <button className="text-blue-500 hover:underline">
-                  Editar
-                </button>
-                <button className="text-red-500 hover:underline">
-                  Excluir
-                </button>
-              </td>
-            </tr>
+            {transactions.map((transaction) => (
+              <tr
+                className="bg-primary odd:bg-primary even:bg-secondary rounded-b-md"
+                key={transaction.id}
+              >
+                <td className="px-4 py-2">
+                  {new Date(transaction.date).toLocaleDateString("pt-BR")}
+                </td>
+                <td className="px-4 py-2">{transaction.name}</td>
+                <td className="px-4 py-2">{transaction.description}</td>
+                <td className="px-4 py-2">{transaction.value.toFixed(2)}</td>
+                <td className="px-4 py-2">{transaction.type.toUpperCase()}</td>
+                <td className="px-4 py-2 space-x-2">
+                  <div className="flex gap-4">
+                    <Link
+                      href={`/dashboard/editTransaction/${transaction.id}`}
+                      className="text-white transition-all duration-500 hover:scale-105 hover:text-blue-500"
+                    >
+                      <Pencil />
+                    </Link>
+                    <Link
+                      href={"/editTransaction"}
+                      className="text-white transition-all duration-500 hover:scale-105 hover:text-red-500"
+                    >
+                      <Trash2 />
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>

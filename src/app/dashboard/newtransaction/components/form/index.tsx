@@ -42,11 +42,11 @@ export function Form() {
         },
       });
       console.log("Cadastrado com sucesso!");
+      router.push("/dashboard");
     } catch (err: any) {
       console.log(err);
       console.log("Erro ao cadastrar transição");
     }
-    router.push("/dashboard");
   }
 
   return (
