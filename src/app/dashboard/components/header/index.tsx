@@ -29,7 +29,7 @@ export function Header() {
 
         <nav className="flex items-center gap-3.5 text-white">
           <Link
-            href={"/dashboard/mytransaction"}
+            href={"/dashboard/myTransaction"}
             className="transition-all duration-500 hover:text-button"
           >
             Minhas Transações
