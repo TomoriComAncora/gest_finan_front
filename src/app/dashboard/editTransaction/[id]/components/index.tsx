@@ -57,11 +57,6 @@ export function EditForm({ id }: EditFormProps) {
     const value = formData.get("value");
     const type = formData.get("type");
 
-    if (!name || !date || !value || !type) {
-      console.log("passou aqui");
-      return;
-    }
-
     const data = {
       name: name as string,
       date: date as string,

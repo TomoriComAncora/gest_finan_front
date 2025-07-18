@@ -6,7 +6,6 @@ import { TransactionProps } from "@/lib/propsTransactions";
 async function getTransaction():Promise<TransactionProps[] | []>{
   try{
     const token = await getCookieServer();
-    console.log("token: ", token)
     const response = await api.get("/transaction", {
       headers:{
         Authorization: `Bearer ${token}`
@@ -22,7 +21,6 @@ async function getTransaction():Promise<TransactionProps[] | []>{
 
 export default async function MyTransaction() {
   const transactions = await getTransaction();
-  console.log(transactions);
 
   return (
     <ListTransactions transactions={transactions}/>

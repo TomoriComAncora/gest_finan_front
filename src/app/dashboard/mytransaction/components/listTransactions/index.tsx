@@ -1,13 +1,35 @@
 "use client";
+import { useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { TransactionProps } from "@/lib/propsTransactions";
+import { api } from "@/server/api";
+import { getCookieClient } from "@/lib/cookieClient";
 
 interface Props {
   transactions: TransactionProps[];
 }
 
-export default function ListTransactions({ transactions }: Props) {
+export default function ListTransactions({
+  transactions: initialTransaction,
+}: Props) {
+  const [transactions, setTransactions] = useState(initialTransaction);
+
+  async function handleDelete(id: string) {
+    const token = getCookieClient();
+    try {
+      await api.delete(`/transaction`, {
+        params: { transaction_id: id },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setTransactions(transactions.filter((item: any) => item.id !== id));
+    } catch (err) {
+      console.log("Erro ao excluir transação", err);
+    }
+  }
+
   return (
     <main className="max-w-5xl my-10 mx-auto py-0 px-4">
       <section className="text-white mt-5 flex flex-col gap-3.5 sm:flex-row justify-between">
@@ -59,12 +81,12 @@ export default function ListTransactions({ transactions }: Props) {
                     >
                       <Pencil />
                     </Link>
-                    <Link
-                      href={"/editTransaction"}
+                    <button
                       className="text-white transition-all duration-500 hover:scale-105 hover:text-red-500"
+                      onClick={() => handleDelete(transaction.id)}
                     >
                       <Trash2 />
-                    </Link>
+                    </button>
                   </div>
                 </td>
               </tr>
