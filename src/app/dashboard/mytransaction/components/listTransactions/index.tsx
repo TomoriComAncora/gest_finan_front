@@ -67,7 +67,7 @@ export default function ListTransactions({
                 key={transaction.id}
               >
                 <td className="px-4 py-2">
-                  {new Date(transaction.date).toLocaleDateString("pt-BR")}
+                  {transaction.date.slice(0, 10).split("-").reverse().join("/")}
                 </td>
                 <td className="px-4 py-2">{transaction.name}</td>
                 <td className="px-4 py-2">{transaction.description}</td>
